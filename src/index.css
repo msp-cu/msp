@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes scroll-x {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.auto-scroll {
+    animation: scroll-x 40s linear infinite;
+}
+
+.auto-scroll:hover {
+    animation-play-state: paused;
+}
