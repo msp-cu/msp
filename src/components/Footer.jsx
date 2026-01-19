@@ -1,12 +1,21 @@
 import { motion } from "framer-motion"
 import { Instagram, Linkedin, Facebook } from "lucide-react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 
 function Footer() {
   const navigate = useNavigate()
+  const location = useLocation()
+
+  const isJoinPage = location.pathname === "/join"
+
+  const handleReplay = () => {
+    localStorage.removeItem("started")
+    localStorage.removeItem("loaded")
+    navigate("/")
+  }
 
   return (
-<footer className="bg-darkBg border-t border-neonPink mt-20">
+    <footer className="bg-darkBg border-t border-neonPink mt-20 relative">
       {/* Scanline Effect */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_3px]" />
 
@@ -28,42 +37,30 @@ function Footer() {
 
         {/* SOCIAL */}
         <div className="flex justify-center gap-6 mb-6">
-          <a
-            href="https://www.instagram.com/mspcu"
-            target="_blank"
-            className="text-white/60 hover:text-neonPink transition"
-          >
+          <a href="https://www.instagram.com/mspcu" target="_blank" className="text-white/60 hover:text-neonPink">
             <Instagram size={18} />
           </a>
-
-          <a
-            href="https://www.linkedin.com/company/msp-cairo/"
-            target="_blank"
-            className="text-white/60 hover:text-neonBlue transition"
-          >
+          <a href="https://www.linkedin.com/company/msp-cairo/" target="_blank" className="text-white/60 hover:text-neonBlue">
             <Linkedin size={18} />
           </a>
-
-          <a
-            href="https://www.facebook.com/MSPCU"
-            target="_blank"
-            className="text-white/60 hover:text-neonGreen transition"
-          >
+          <a href="https://www.facebook.com/MSPCU" target="_blank" className="text-white/60 hover:text-neonGreen">
             <Facebook size={18} />
           </a>
         </div>
 
-      {/* Press Start */}
-        <motion.button
-          onClick={() => navigate(0)}
-          animate={{ opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="font-pixel text-neonPink text-xs tracking-widest"
-        >
-          PRESS START TO REPLAY
-        </motion.button>
+        {/* 🎮 PRESS START — JOIN ONLY */}
+        {isJoinPage && (
+          <motion.button
+            onClick={handleReplay}
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="font-pixel text-neonPink text-xs tracking-widest"
+          >
+            PRESS START TO REPLAY
+          </motion.button>
+        )}
 
-        {/* Copyright */}
+        {/* COPYRIGHT */}
         <p className="mt-10 text-[10px] text-white/30">
           © 2026 MSP Cairo University — All Rights Reserved
         </p>
