@@ -1,7 +1,7 @@
 import { useState } from "react"
 import LevelCard from "./LevelCard"
 import XPBar from "../components/XPBar"
-import { levels } from "../data/levels"
+import { levels } from "../Data/levels"
 
 function Levels() {
   const [xp] = useState(150) // مؤقتًا
