@@ -81,8 +81,7 @@ function Home() {
     </>
   )
 }
-localStorage.removeItem("started")
-localStorage.removeItem("loaded")
+
 
 export default Home
 
