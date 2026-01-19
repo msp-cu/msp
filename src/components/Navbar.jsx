@@ -2,10 +2,25 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Volume2, VolumeX, Menu, X } from "lucide-react"
 import { toggleMute } from "../utils/sound"
+import { useLocation, useNavigate } from "react-router-dom"
+
 
 function Navbar() {
   const [open, setOpen] = useState(false)
   const [muted, setMuted] = useState(false)
+  const location = useLocation()
+const navigate = useNavigate()
+
+const goToSection = (id) => {
+  if (location.pathname !== "/") {
+    navigate("/", { state: { scrollTo: id } })
+  } else {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+  }
+}
+
+
+
 
   return (
     <>
@@ -30,9 +45,9 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-8 font-pixel text-xs text-white/70">
-            <li><a href="#about" className="hover:text-neonPink">ABOUT</a></li>
-            <li><a href="#events" className="hover:text-neonPink">EVENTS</a></li>
-            <li><a href="#team" className="hover:text-neonPink">TEAM</a></li>
+            <li><button onClick={() => goToSection("about")} className="hover:text-neonPink">ABOUT</button></li>
+            <li><button onClick={() => goToSection("events")} className="hover:text-neonPink">Events</button></li>
+            <li><button onClick={() => goToSection("team")} className="hover:text-neonPink">Team</button></li>
 
             {/* Mute */}
             <button
@@ -73,9 +88,32 @@ function Navbar() {
             <X size={30} />
           </button>
 
-          <a href="#about" onClick={() => setOpen(false)}>ABOUT</a>
-          <a href="#events" onClick={() => setOpen(false)}>EVENTS</a>
-          <a href="#team" onClick={() => setOpen(false)}>TEAM</a>
+          <button
+  onClick={() => {
+    setOpen(false)
+    goToSection("about")
+  }}
+>
+  ABOUT
+</button>
+
+<button
+  onClick={() => {
+    setOpen(false)
+    goToSection("events")
+  }}
+>
+  EVENTS
+</button>
+
+<button
+  onClick={() => {
+    setOpen(false)
+    goToSection("team")
+  }}
+>
+  TEAM
+</button>
 
           <Link
             to="/join"

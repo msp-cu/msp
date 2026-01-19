@@ -7,27 +7,27 @@ export const teamCards = [
     image: "/Board/Ahmed.jpg",
     xp: 100,
     rarity: "legendary",
-    description: "Leader of the guild. Controls the final strategy."
+    description: "The supreme commander of the guild. Shapes the vision, leads every major decision, and unlocks end-game strategies."
   },
   {
-   id: 2,
+    id: 2,
     name: "Salah Eldeen",
     role: "AC Director",
     category: "high",
     image: "/Board/Salah.jpeg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
-},
+    xp: 95,
+    rarity: "epic",
+    description: "Controls internal operations and balances the guild’s power. Keeps every unit aligned and efficient."
+  },
   {
     id: 3,
     name: "Youssef Lashin",
     role: "OC Director",
     category: "high",
     image: "/Board/Lashin.jpeg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 95,
+    rarity: "epic",
+    description: "Master of external campaigns. Leads the guild beyond its borders and secures new alliances."
   },
   {
     id: 4,
@@ -35,9 +35,9 @@ export const teamCards = [
     role: "OC Director",
     category: "high",
     image: "/Board/Helmy.jpeg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 80,
+    rarity: "epic",
+    description: "Strategic field leader focused on expansion, outreach, and large-scale operations."
   },
   {
     id: 5,
@@ -45,9 +45,9 @@ export const teamCards = [
     role: "Creative Director",
     category: "high",
     image: "/Board/Hoda.png",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 90,
+    rarity: "epic",
+    description: "The visual architect of the guild. Turns ideas into powerful visuals and brand identity."
   },
   {
     id: 6,
@@ -55,60 +55,62 @@ export const teamCards = [
     role: "OC Director",
     category: "high",
     image: "/Board/Haneen.jpg",
-    xp: 85,
+    xp: 95,
     rarity: "epic",
-    description: "Master of systems and code architecture."
+    description: "Elite tactician handling high-risk missions and large-scale coordination."
   },
-  
   {
     id: 7,
     name: "Menna Shehata",
-    role: "Ac Director",
+    role: "AC Director",
     category: "high",
     image: "/Board/Menna.jpg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 85,
+    rarity: "epic",
+    description: "Ensures internal stability and keeps every system running smoothly."
   },
   {
     id: 8,
     name: "Renada Tamer",
-    role: "Ac Director",
+    role: "AC Director",
     category: "high",
     image: "/Board/Renada.JPG",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 85,
+    rarity: "epic",
+    description: "Operational strategist focused on execution, discipline, and consistency."
   },
-    {
+
+  /* ================= TECH ================= */
+
+  {
     id: 9,
     name: "Shahd Eid",
     role: "Front-End Instructor",
     category: "tech",
     image: "/Board/Shahd.jpeg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Teaches interface combat techniques and modern UI mechanics."
   },
-    {
+  {
     id: 10,
     name: "Habiba El Gohary",
     role: "Front-End Instructor",
     category: "tech",
     image: "/Board/Habiba.jpg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Specialist in building responsive and interactive user experiences."
   },
-    {
+  {
     id: 11,
     name: "Rawan Ahmed",
     role: "UI-UX Instructor",
     category: "tech",
     image: "/Board/Rawan.jpeg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 85,
+    rarity: "epic",
+    description: "Designs smooth user journeys and optimizes player experience."
   },
   {
     id: 12,
@@ -116,9 +118,9 @@ export const teamCards = [
     role: "UI-UX Instructor",
     category: "tech",
     image: "/Board/israa.jpeg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Balances aesthetics with usability for maximum impact."
   },
   {
     id: 13,
@@ -126,20 +128,19 @@ export const teamCards = [
     role: "Back-End Instructor",
     category: "tech",
     image: "/Board/youssef-said.jpeg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 90,
+    rarity: "epic",
+    description: "Guardian of servers, APIs, and system logic behind the scenes."
   },
-  
   {
     id: 14,
     name: "Mohamed Beder",
-    role: "Ai Instructor",
+    role: "AI Instructor",
     category: "tech",
     image: "/Board/Beder.jpg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 95,
+    rarity: "epic",
+    description: "Trains intelligent systems and unlocks machine-learning abilities."
   },
   {
     id: 15,
@@ -147,20 +148,19 @@ export const teamCards = [
     role: "Flutter Instructor",
     category: "tech",
     image: "/Board/Samual.jpg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Builds cross-platform apps with speed and precision."
   },
-
   {
     id: 16,
     name: "Omar El Barody",
     role: "Flutter Instructor",
     category: "tech",
     image: "/Board/Omar.jpeg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Specialist in mobile performance and UI consistency."
   },
   {
     id: 17,
@@ -168,9 +168,9 @@ export const teamCards = [
     role: "Cyber Security Instructor",
     category: "tech",
     image: "/Board/Anas.jpg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 95,
+    rarity: "epic",
+    description: "Defender of systems against digital threats and exploits."
   },
   {
     id: 18,
@@ -178,19 +178,22 @@ export const teamCards = [
     role: "Cyber Security Instructor",
     category: "tech",
     image: "/Board/Gehan.jpeg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 90,
+    rarity: "epic",
+    description: "Protects the guild’s data and secures hidden vulnerabilities."
   },
+
+  /* ================= NON-TECH ================= */
+
   {
     id: 19,
     name: "Zahraa Nady",
     role: "HR Head",
     category: "non-tech",
     image: "/Board/Zahraa.jpg",
-    xp: 70,
+    xp: 75,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Manages recruitment, morale, and team balance."
   },
   {
     id: 20,
@@ -198,9 +201,9 @@ export const teamCards = [
     role: "HR Head",
     category: "non-tech",
     image: "/Board/Zeyad.jpg",
-    xp: 70,
+    xp: 75,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Ensures team harmony and player progression."
   },
   {
     id: 21,
@@ -210,7 +213,7 @@ export const teamCards = [
     image: "/Board/Habiba-kh.jpeg",
     xp: 70,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Controls public image and external communications."
   },
   {
     id: 22,
@@ -218,9 +221,9 @@ export const teamCards = [
     role: "BD Head",
     category: "non-tech",
     image: "/Board/Yahia.JPG",
-    xp: 70,
+    xp: 75,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Unlocks partnerships and growth opportunities."
   },
   {
     id: 23,
@@ -228,9 +231,9 @@ export const teamCards = [
     role: "BD Head",
     category: "non-tech",
     image: "/Board/kiro.jpeg",
-    xp: 70,
+    xp: 75,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Negotiates deals and expands the guild’s influence."
   },
   {
     id: 24,
@@ -239,8 +242,8 @@ export const teamCards = [
     category: "non-tech",
     image: "/Board/Wael.jpeg",
     xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    rarity: "uncommon",
+    description: "Organizes events and coordinates live missions."
   },
   {
     id: 25,
@@ -249,8 +252,8 @@ export const teamCards = [
     category: "non-tech",
     image: "/Board/Habiba-Kamal.png",
     xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    rarity: "uncommon",
+    description: "Ensures smooth execution of all events."
   },
   {
     id: 26,
@@ -258,9 +261,9 @@ export const teamCards = [
     role: "Graphic Design Head",
     category: "non-tech",
     image: "/Board/Begad.jpg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Crafts visual assets and powerful designs."
   },
   {
     id: 27,
@@ -268,9 +271,9 @@ export const teamCards = [
     role: "Graphic Design Head",
     category: "non-tech",
     image: "/Board/Hour.jpg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Transforms ideas into visual spells."
   },
   {
     id: 28,
@@ -278,9 +281,9 @@ export const teamCards = [
     role: "Video Editing Head",
     category: "non-tech",
     image: "/Board/Mohamed.jpg",
-    xp: 70,
+    xp: 75,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Edits footage and creates cinematic content."
   },
   {
     id: 29,
@@ -288,9 +291,9 @@ export const teamCards = [
     role: "Marketing Head",
     category: "non-tech",
     image: "/Board/Naham.jpeg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Leads marketing campaigns and audience growth."
   },
   {
     id: 30,
@@ -298,19 +301,19 @@ export const teamCards = [
     role: "Marketing Head",
     category: "non-tech",
     image: "/Board/Amr.jpeg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Strategizes promotions and market reach."
   },
   {
     id: 31,
     name: "Eyad Ashraf",
-    role: "QC Modertor  ",
+    role: "QC Moderator",
     category: "non-tech",
     image: "/Board/Eyad.jpg",
-    xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    xp: 65,
+    rarity: "uncommon",
+    description: "Maintains quality standards and rules enforcement."
   },
   {
     id: 32,
@@ -319,8 +322,8 @@ export const teamCards = [
     category: "non-tech",
     image: "/Board/Joo.png",
     xp: 70,
-    rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    rarity: "uncommon",
+    description: "Creates engaging content and digital stories."
   },
   {
     id: 33,
@@ -328,9 +331,9 @@ export const teamCards = [
     role: "Entrepreneurship Instructor",
     category: "non-tech",
     image: "/Board/Mai.jpg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Teaches startup mindset and business tactics."
   },
   {
     id: 34,
@@ -338,20 +341,19 @@ export const teamCards = [
     role: "Entrepreneurship Instructor",
     category: "non-tech",
     image: "/Board/Jumana.jpg",
-    xp: 70,
+    xp: 80,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Guides players through innovation and growth paths."
   },
-  
   {
     id: 35,
-    name: " Moustafa Yasser",
+    name: "Moustafa Yasser",
     role: "Finance Instructor",
     category: "non-tech",
     image: "/Board/Moustafa.jpeg",
-    xp: 70,
+    xp: 85,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Controls resources, budgets, and financial strategy."
   },
   {
     id: 36,
@@ -359,9 +361,9 @@ export const teamCards = [
     role: "Project Management Instructor",
     category: "non-tech",
     image: "/Board/Ahmed Kh.jpeg",
-    xp: 70,
+    xp: 85,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
+    description: "Manages timelines, tasks, and mission success."
   },
   {
     id: 37,
@@ -369,10 +371,8 @@ export const teamCards = [
     role: "Project Management Instructor",
     category: "non-tech",
     image: "/Board/Abdullah.jpeg",
-    xp: 70,
+    xp: 85,
     rarity: "rare",
-    description: "Frontend and UI combat specialist."
-  },
-  
-  
+    description: "Ensures projects are delivered on time and on target."
+  }
 ]

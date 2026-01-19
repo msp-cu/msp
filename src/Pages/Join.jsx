@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import Navbar from "../components/Navbar"
+
 import {
   User,
   Mail,
@@ -10,11 +11,12 @@ import {
   GraduationCap,
   Linkedin,
   FileText,
-  Layers
+  Layers,
 } from "lucide-react"
 
 function Join() {
   const navigate = useNavigate()
+  const savedPath = JSON.parse(localStorage.getItem("playerPath"))
 
   const [form, setForm] = useState({
     firstName: "",
@@ -24,8 +26,8 @@ function Join() {
     university: "",
     year: "",
     major: "",
-    track: "",
-    pref1: "",
+    track: "", // ⛔ مش هنسمع من برا
+    pref1: savedPath?.committee || "",
     pref2: "",
     linkedin: "",
     experience: "",
@@ -36,16 +38,22 @@ function Join() {
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(name === "track" && { pref1: "", pref2: "" }),
+    }))
+
+    setErrors((prev) => ({ ...prev, [name]: null }))
   }
 
   const validate = () => {
     const err = {}
+
     Object.entries(form).forEach(([key, value]) => {
-      if (
-        !value &&
-        !["linkedin", "experience", "notes"].includes(key)
-      ) {
+      if (!value && !["linkedin", "experience", "notes"].includes(key)) {
         err[key] = "Required"
       }
     })
@@ -53,11 +61,21 @@ function Join() {
     if (form.email && !form.email.includes("@")) {
       err.email = "Invalid email"
     }
+
     if (form.phone && form.phone.length < 10) {
       err.phone = "Invalid phone"
     }
 
     setErrors(err)
+
+    if (Object.keys(err).length > 0) {
+      const firstError = Object.keys(err)[0]
+      document.querySelector(`[name="${firstError}"]`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      })
+    }
+
     return Object.keys(err).length === 0
   }
 
@@ -68,30 +86,38 @@ function Join() {
     console.log(form)
   }
 
-  const isFormComplete = Object.entries(form).every(
-    ([key, value]) =>
-      value || ["linkedin", "experience", "notes"].includes(key)
-  )
-
   return (
-    <div className="min-h-screen bg-black pb-20">
-     <Navbar /> <br /><br /><br /><br /> <br /> <br />
+    <div className="min-h-screen bg-black pb-20 pt-24">
+      <Navbar />
+
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto border-4 border-neonPink p-10 shadow-[0_0_50px_#ff2fd2]"
       >
-        <h1 className="font-pixel text-neonPink text-center text-xl mb-10">
+        <h1 className="font-pixel text-neonPink text-center text-xl mb-6">
           JOIN THE GAME
         </h1>
+
+        {savedPath && (
+          <p className="text-neonBlue font-pixel text-[10px] text-center mb-6">
+            🎮 A PATH WAS SUGGESTED — YOU MUST CONFIRM YOUR TRACK
+          </p>
+        )}
+
+        {Object.keys(errors).length > 0 && (
+          <div className="mb-6 border-2 border-neonBlue p-4 text-neonBlue font-pixel text-xs text-center animate-pulse">
+            ⚠️ COMPLETE ALL REQUIRED FIELDS
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
 
           <Input name="firstName" icon={<User />} placeholder="First Name" onChange={handleChange} error={errors.firstName} />
           <Input name="lastName" icon={<User />} placeholder="Last Name" onChange={handleChange} error={errors.lastName} />
           <Input name="phone" icon={<Phone />} placeholder="Phone Number" onChange={handleChange} error={errors.phone} />
-          <Input name="email" icon={<Mail />} placeholder="Email" type="email" onChange={handleChange} error={errors.email} />
+          <Input name="email" icon={<Mail />} placeholder="Email" onChange={handleChange} error={errors.email} />
           <Input name="university" icon={<School />} placeholder="University" onChange={handleChange} error={errors.university} />
 
           <Select
@@ -108,7 +134,7 @@ function Join() {
           <Select
             name="track"
             icon={<Layers />}
-            label="Track Type"
+            label="SELECT TRACK TYPE (REQUIRED)"
             options={["Tech", "Non-Tech"]}
             onChange={handleChange}
             error={errors.track}
@@ -116,58 +142,77 @@ function Join() {
 
           {form.track === "Tech" && (
             <>
-              <Select name="pref1" icon={<Layers />} label="First Tech Preference" options={["Web","Mobile","AI","Cyber Security"]} onChange={handleChange} error={errors.pref1} />
-              <Select name="pref2" icon={<Layers />} label="Second Tech Preference" options={["Web","Mobile","AI","Cyber Security"]} onChange={handleChange} error={errors.pref2} />
+              <Select
+                name="pref1"
+                icon={<Layers />}
+                label="First Tech Preference"
+                options={["Front-End","Back-End","Flutter","AI","Cyber Security","UI-UX"]}
+                onChange={handleChange}
+                error={errors.pref1}
+              />
+              <Select
+                name="pref2"
+                icon={<Layers />}
+                label="Second Tech Preference"
+                options={["Front-End","Back-End","Flutter","AI","Cyber Security","UI-UX"]}
+                onChange={handleChange}
+                error={errors.pref2}
+              />
             </>
           )}
 
           {form.track === "Non-Tech" && (
             <>
-              <Select name="pref1" icon={<Layers />} label="First Non-Tech Preference" options={["Media","PR","HR","Marketing"]} onChange={handleChange} error={errors.pref1} />
-              <Select name="pref2" icon={<Layers />} label="Second Non-Tech Preference" options={["Media","PR","HR","Marketing"]} onChange={handleChange} error={errors.pref2} />
+              <Select
+                name="pref1"
+                icon={<Layers />}
+                label="First Non-Tech Preference"
+                options={["PR","Entrepreneurship","Project Management","Finance"]}
+                onChange={handleChange}
+                error={errors.pref1}
+              />
+              <Select
+                name="pref2"
+                icon={<Layers />}
+                label="Second Non-Tech Preference"
+                options={["PR","Entrepreneurship","Project Management","Finance"]}
+                onChange={handleChange}
+                error={errors.pref2}
+              />
             </>
           )}
 
           <Input name="linkedin" icon={<Linkedin />} placeholder="LinkedIn (Optional)" onChange={handleChange} />
-
           <Textarea name="experience" icon={<FileText />} placeholder="Relevant experience (N/A if none)" onChange={handleChange} />
           <Textarea name="notes" icon={<FileText />} placeholder="Notes (Optional)" onChange={handleChange} />
 
-          <motion.button
-            disabled={!isFormComplete}
-            whileHover={isFormComplete ? { scale: 1.05 } : {}}
-            className={`md:col-span-2 mt-6 font-pixel text-xs py-4 border-2 transition-all
-              ${isFormComplete
-                ? "border-neonPink text-neonPink hover:bg-neonPink hover:text-black shadow-[0_0_20px_#ff2fd2]"
-                : "border-gray-600 text-gray-600 cursor-not-allowed"}`}
-          >
-            SUBMIT APPLICATION
-          </motion.button>
-
+          {!submitted && (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="md:col-span-2 mt-6 font-pixel text-xs py-4 border-2 border-neonPink text-neonPink hover:bg-neonPink hover:text-black shadow-[0_0_20px_#ff2fd2]"
+            >
+              SUBMIT APPLICATION
+            </motion.button>
+          )}
         </form>
 
         {submitted && (
           <p className="text-neonGreen font-pixel text-center mt-6">
-            ✔ Application Submitted Successfully
+            ✔ APPLICATION SUBMITTED SUCCESSFULLY
           </p>
         )}
-
-        <button
-          onClick={() => navigate("/")}
-          className="block mx-auto mt-6 font-pixel text-xs text-white/60 hover:text-neonPink"
-        >
-          ⬅ BACK TO HOME
-        </button>
       </motion.div>
     </div>
   )
 }
 
 export default Join
+
 function Input({ icon, placeholder, type = "text", name, onChange, error }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex items-center gap-3 border-2 border-neonPink p-3">
+      <div className={`flex items-center gap-3 border-2 p-3
+        ${error ? "border-neonBlue shadow-[0_0_15px_#00f0ff]" : "border-neonPink"}`}>
         <span className="text-neonPink">{icon}</span>
         <input
           name={name}
@@ -177,11 +222,7 @@ function Input({ icon, placeholder, type = "text", name, onChange, error }) {
           className="bg-transparent w-full text-white font-pixel text-xs focus:outline-none"
         />
       </div>
-      {error && (
-        <span className="text-red-500 text-[10px] font-pixel">
-          {error}
-        </span>
-      )}
+      {error && <span className="text-neonBlue text-[10px] font-pixel">{error}</span>}
     </div>
   )
 }
@@ -189,7 +230,8 @@ function Input({ icon, placeholder, type = "text", name, onChange, error }) {
 function Select({ icon, label, options, name, onChange, error }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex items-center gap-3 border-2 border-neonPink p-3">
+      <div className={`flex items-center gap-3 border-2 p-3
+        ${error ? "border-neonBlue shadow-[0_0_15px_#00f0ff]" : "border-neonPink"}`}>
         <span className="text-neonPink">{icon}</span>
         <select
           name={name}
@@ -198,17 +240,11 @@ function Select({ icon, label, options, name, onChange, error }) {
         >
           <option value="">{label}</option>
           {options.map((opt) => (
-            <option key={opt} value={opt}>
-              {opt}
-            </option>
+            <option key={opt} value={opt}>{opt}</option>
           ))}
         </select>
       </div>
-      {error && (
-        <span className="text-red-500 text-[10px] font-pixel">
-          {error}
-        </span>
-      )}
+      {error && <span className="text-neonBlue text-[10px] font-pixel">{error}</span>}
     </div>
   )
 }

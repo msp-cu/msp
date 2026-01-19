@@ -1,17 +1,34 @@
 import { useState } from "react"
 import YugiCard from "./YugiCard"
 import { teamCards } from "../../Data/team"
+import clickSound from "..//../assets/click.mp3"
 
 function Team() {
   const [filter, setFilter] = useState("high")
+const playSound = () => {
+      new Audio(clickSound).play()
+    }
 
   const filteredCards =
     filter === "all"
       ? teamCards
       : teamCards.filter(card => card.category === filter)
 
+  const goToNextLevel = () => {
+     playSound()
+    document.getElementById("levels")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+
   return (
-    <section id="team" className="py-32 bg-black text-center">
+    <section id="team" className="py-32 bg-darkBg text-center">
+
+      {/* LEVEL */}
+      <p className="font-pixel text-neonPink text-xs mb-4">
+        LEVEL 3
+      </p>
+
       <h2 className="font-pixel text-neonPink mb-10">
         THE BOARD
       </h2>
@@ -19,7 +36,6 @@ function Team() {
       {/* Filters */}
       <div className="flex justify-center gap-4 mb-16">
         {[
-          // { key: "all", label: "ALL" },
           { key: "high", label: "HIGH BOARD" },
           { key: "tech", label: "TECH" },
           { key: "non-tech", label: "NON-TECH" },
@@ -43,15 +59,33 @@ function Team() {
       </div>
 
       {/* Cards */}
-      <div className="
-        grid gap-10
-        grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-        place-items-center
-      ">
+      <div
+        className="
+          grid gap-10
+          grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+          place-items-center
+        "
+      >
         {filteredCards.map(card => (
           <YugiCard key={card.id} card={card} />
         ))}
       </div>
+
+      {/* CONTINUE */}
+      <div className="mt-20">
+        <span
+          onClick={goToNextLevel}
+          className="
+            font-pixel text-neonPink text-xs
+            cursor-pointer
+            hover:text-white
+            animate-pulse
+          "
+        >
+          PRESS HERE TO CONTINUE ▶
+        </span>
+      </div>
+
     </section>
   )
 }

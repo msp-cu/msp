@@ -1,6 +1,23 @@
+import clickSound from "../assets/click.mp3"
+
 function About() {
+
+  const playSound = () => {
+    new Audio(clickSound).play()
+  }
+
+  const goNext = () => {
+    playSound()
+    document.getElementById("events")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-black px-6">
+    <section
+      id="about"
+      className="min-h-screen flex items-center justify-center bg-darkBg px-6"
+    >
       <div className="max-w-3xl text-center">
 
         <p className="font-pixel text-neonPink text-xs mb-4">
@@ -12,15 +29,22 @@ function About() {
         </h2>
 
         <p className="text-white/70 leading-relaxed text-sm md:text-base">
-          MSP CU is a student community powered by passion for technology,
-          innovation, and impact.  
-          We turn students into creators through workshops, projects,
-          competitions, and real-world experiences.
+          MSP CU is a student community powered by passion for technology, 
+          innovation, and impact. We turn students into creators through workshops, 
+          projects, competitions, and real-world experiences.
         </p>
 
         <div className="mt-10">
-          <span className="font-pixel text-neonPink text-xs">
-            PRESS START TO CONTINUE ▶
+          <span
+            onClick={goNext}
+            className="
+              font-pixel text-neonPink text-xs
+              cursor-pointer
+              hover:text-white
+              animate-pulse
+            "
+          >
+            PRESS HERE TO CONTINUE ▶
           </span>
         </div>
 

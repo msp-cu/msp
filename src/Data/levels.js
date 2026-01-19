@@ -1,34 +1,49 @@
-export const levels = [
+export const paths = [
   {
-    id: 1,
-    title: "WEB DEV",
-    xpRequired: 0,
-    color: "neonBlue",
-    glow: "#00f0ff",
-    desc: "Build modern websites."
+    id: "Tech",
+    title: "TECH TRACK",
+    trackType: "Tech",
+    open: true,
+    rarity: "epic",
+    description: "Build systems, write code, and shape the future with technology.",
+    committees: [
+      "Front-End",
+      "Back-End",
+      "Flutter",
+      "AI",
+      "Cyber Security",
+      "UI-UX",
+    ],
+  },
+
+  {
+    id: "Non-Tech",
+    title: "Non-TECH TRACK",
+    trackType: "Non-Tech",
+    open: true,
+    rarity: "rare",
+description:
+  "Behind every great product is a strong strategy. Communicate, manage, build, and lead the game from the inside.",    
+  committees: ["PR","Entrepreneurship","Project Management","Finance"],
+  },
+
+  // 🔒 CLOSED
+  {
+    id: "OC",
+    title:"Organization Committees",
+    trackType: "Non-Tech",
+    open: false,
+    rarity: "locked",
+    description: "Applications closed.",
+    committees: ["HR","BD","EM"],
   },
   {
-    id: 2,
-    title: "AI",
-    xpRequired: 100,
-    color: "neonPink",
-    glow: "#ff2fd2",
-    desc: "Train models."
-  },
-  {
-    id: 3,
-    title: "CYBER",
-    xpRequired: 250,
-    color: "neonGreen",
-    glow: "#39ff14",
-    desc: "Security & CTF."
-  },
-{
-    id: 4,
-    title: "Game Div",
-    xpRequired: 400,
-    color: "neonRed",
-    glow: "#ff073a",
-    desc: "Security & CTF."
+    id: "Creative Committees",
+    title: "Creative Committees",
+    trackType: "Non-Tech",
+    open: false,
+    rarity: "locked",
+    description: "Applications closed.",
+    committees: ["Graphic Design", "Video Editing" , " Marketing"],
   },
 ]

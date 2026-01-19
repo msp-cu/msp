@@ -30,8 +30,12 @@ export const startBackgroundMusic = () => {
 
 // Stop music (optional)
 export const stopBackgroundMusic = () => {
-  if (bgAudio) bgAudio.pause()
+  if (bgAudio) {
+    bgAudio.pause()
+    bgAudio.currentTime = 0
+  }
 }
+
 
 // Toggle mute
 export const toggleMute = () => {
