@@ -37,7 +37,7 @@ function Footer() {
 
         {/* SOCIAL */}
         <div className="flex justify-center gap-6 mb-6">
-          <a href="https://www.instagram.com/mspcu" target="_blank" className="text-white/60 hover:text-neonPink">
+          <a href="https://www.instagram.com/mspcu2/" target="_blank" className="text-white/60 hover:text-neonPink">
             <Instagram size={18} />
           </a>
           <a href="https://www.linkedin.com/company/msp-cairo/" target="_blank" className="text-white/60 hover:text-neonBlue">
