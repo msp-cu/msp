@@ -201,6 +201,13 @@ function Join() {
             ✔ APPLICATION SUBMITTED SUCCESSFULLY
           </p>
         )}
+        <button
+  onClick={() => navigate("/")}
+  className="block mx-auto mt-6 font-pixel text-xs text-white/60 hover:text-neonPink transition"
+>
+  ⬅  EXIT GAME
+</button>
+
       </motion.div>
     </div>
   )
