@@ -8,7 +8,10 @@ import About from "../sections/About"
 import Events from "../sections/Events/Events"
 import Team from "../sections/Team/Team"
 import Levels from "../sections/Levels"
+import Collaborations from "../sections/Collaborations"
+import Projects from "../sections/Projects/Projects"
 import {enableSound,startBackgroundMusic,stopBackgroundMusic,} from "../utils/sound"
+import Footer from "../components/Footer"
 
 
 
@@ -69,8 +72,12 @@ function Home() {
       <Hero />
       <About />
       <Events />
+      <Collaborations />
+      <Projects />
       <Team />
       <Levels />
+      {/* 🎮 Arcade Credits */}
+      <Footer />
     </>
   )
 }

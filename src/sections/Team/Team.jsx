@@ -26,7 +26,7 @@ const playSound = () => {
 
       {/* LEVEL */}
       <p className="font-pixel text-neonPink text-xs mb-4">
-        LEVEL 3
+        LEVEL 5
       </p>
 
       <h2 className="font-pixel text-neonPink mb-10">

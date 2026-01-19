@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 import {
   User,
@@ -13,6 +14,9 @@ import {
   FileText,
   Layers,
 } from "lucide-react"
+
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwJZD3oWST77_xw4z364NbRurQ3t3OGluGrIqy9TEvSHllOwLqwTxXz5BcKHwLVL7st/exec"
 
 function Join() {
   const navigate = useNavigate()
@@ -26,7 +30,7 @@ function Join() {
     university: "",
     year: "",
     major: "",
-    track: "", // ⛔ مش هنسمع من برا
+    track: "",
     pref1: savedPath?.committee || "",
     pref2: "",
     linkedin: "",
@@ -36,6 +40,7 @@ function Join() {
 
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -79,22 +84,43 @@ function Join() {
     return Object.keys(err).length === 0
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!validate()) return
-    setSubmitted(true)
-    console.log(form)
+
+    try {
+      setLoading(true)
+
+      const formData = new FormData()
+      Object.entries(form).forEach(([key, value]) => {
+        formData.append(key, value)
+      })
+
+      const res = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData, // 👈 بدون headers (حل CORS)
+      })
+
+      if (!res.ok) throw new Error("Request failed")
+
+      setSubmitted(true)
+    } catch (err) {
+      console.error(err)
+      alert("⚠️ Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <div className="min-h-screen bg-black pb-20 pt-24">
+    <div className="min-h-screen bg-black pt-24 flex flex-col">
       <Navbar />
 
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto border-4 border-neonPink p-10 shadow-[0_0_50px_#ff2fd2]"
+        className="flex-grow max-w-5xl mx-auto border-4 border-neonPink p-10 shadow-[0_0_50px_#ff2fd2]"
       >
         <h1 className="font-pixel text-neonPink text-center text-xl mb-6">
           JOIN THE GAME
@@ -113,7 +139,6 @@ function Join() {
         )}
 
         <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
-
           <Input name="firstName" icon={<User />} placeholder="First Name" onChange={handleChange} error={errors.firstName} />
           <Input name="lastName" icon={<User />} placeholder="Last Name" onChange={handleChange} error={errors.lastName} />
           <Input name="phone" icon={<Phone />} placeholder="Phone Number" onChange={handleChange} error={errors.phone} />
@@ -142,43 +167,23 @@ function Join() {
 
           {form.track === "Tech" && (
             <>
-              <Select
-                name="pref1"
-                icon={<Layers />}
-                label="First Tech Preference"
+              <Select name="pref1" icon={<Layers />} label="First Tech Preference"
                 options={["Front-End","Back-End","Flutter","AI","Cyber Security","UI-UX"]}
-                onChange={handleChange}
-                error={errors.pref1}
-              />
-              <Select
-                name="pref2"
-                icon={<Layers />}
-                label="Second Tech Preference"
+                onChange={handleChange} error={errors.pref1} />
+              <Select name="pref2" icon={<Layers />} label="Second Tech Preference"
                 options={["Front-End","Back-End","Flutter","AI","Cyber Security","UI-UX"]}
-                onChange={handleChange}
-                error={errors.pref2}
-              />
+                onChange={handleChange} error={errors.pref2} />
             </>
           )}
 
           {form.track === "Non-Tech" && (
             <>
-              <Select
-                name="pref1"
-                icon={<Layers />}
-                label="First Non-Tech Preference"
+              <Select name="pref1" icon={<Layers />} label="First Non-Tech Preference"
                 options={["PR","Entrepreneurship","Project Management","Finance"]}
-                onChange={handleChange}
-                error={errors.pref1}
-              />
-              <Select
-                name="pref2"
-                icon={<Layers />}
-                label="Second Non-Tech Preference"
+                onChange={handleChange} error={errors.pref1} />
+              <Select name="pref2" icon={<Layers />} label="Second Non-Tech Preference"
                 options={["PR","Entrepreneurship","Project Management","Finance"]}
-                onChange={handleChange}
-                error={errors.pref2}
-              />
+                onChange={handleChange} error={errors.pref2} />
             </>
           )}
 
@@ -189,9 +194,10 @@ function Join() {
           {!submitted && (
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="md:col-span-2 mt-6 font-pixel text-xs py-4 border-2 border-neonPink text-neonPink hover:bg-neonPink hover:text-black shadow-[0_0_20px_#ff2fd2]"
+              disabled={loading}
+              className="md:col-span-2 mt-6 font-pixel text-xs py-4 border-2 border-neonPink text-neonPink hover:bg-neonPink hover:text-black shadow-[0_0_20px_#ff2fd2] disabled:opacity-50"
             >
-              SUBMIT APPLICATION
+              {loading ? "SUBMITTING..." : "SUBMIT APPLICATION"}
             </motion.button>
           )}
         </form>
@@ -201,19 +207,23 @@ function Join() {
             ✔ APPLICATION SUBMITTED SUCCESSFULLY
           </p>
         )}
-        <button
-  onClick={() => navigate("/")}
-  className="block mx-auto mt-6 font-pixel text-xs text-white/60 hover:text-neonPink transition"
->
-  ⬅  EXIT GAME
-</button>
 
+        <button
+          onClick={() => navigate("/")}
+          className="block mx-auto mt-6 font-pixel text-xs text-white/60 hover:text-neonPink transition"
+        >
+          ⬅ EXIT GAME
+        </button>
       </motion.div>
+
+      <Footer />
     </div>
   )
 }
 
 export default Join
+
+/* ===================== UI COMPONENTS ===================== */
 
 function Input({ icon, placeholder, type = "text", name, onChange, error }) {
   return (

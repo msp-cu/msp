@@ -320,7 +320,7 @@ export const teamCards = [
     name: "Youssef Shaaban",
     role: "Content Creator",
     category: "non-tech",
-    image: "/Board/Joo.png",
+    image: "/Board/Joo.jpg",
     xp: 70,
     rarity: "uncommon",
     description: "Creates engaging content and digital stories."

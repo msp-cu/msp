@@ -15,7 +15,7 @@ function Events() {
   const goNext = () => {
         playSound()
     document
-      .getElementById("team")
+      .getElementById("Collaborations")
       ?.scrollIntoView({ behavior: "smooth" })
   }
 

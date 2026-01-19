@@ -46,8 +46,9 @@ const goToSection = (id) => {
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-8 font-pixel text-xs text-white/70">
             <li><button onClick={() => goToSection("about")} className="hover:text-neonPink">ABOUT</button></li>
-            <li><button onClick={() => goToSection("events")} className="hover:text-neonPink">Events</button></li>
-            <li><button onClick={() => goToSection("team")} className="hover:text-neonPink">Team</button></li>
+            <li><button onClick={() => goToSection("events")} className="hover:text-neonPink">EVENTS</button></li>
+            <li><button onClick={() => goToSection("team")} className="hover:text-neonPink">TEAM</button></li>
+            <li><button onClick={() => goToSection("levels")} className="hover:text-neonPink">PATH</button></li>
 
             {/* Mute */}
             <button
@@ -113,6 +114,14 @@ const goToSection = (id) => {
   }}
 >
   TEAM
+</button>
+<button
+  onClick={() => {
+    setOpen(false)
+    goToSection("levels")
+  }}
+>
+  Path
 </button>
 
           <Link

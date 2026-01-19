@@ -23,9 +23,10 @@ function Levels() {
 
   return (
     <section
-      id="levels"
-      className="min-h-screen bg-black py-32 px-6 text-center"
-    >
+  id="levels"
+  className="bg-black py-32 px-6 text-center"
+>
+
       <p className="font-pixel text-neonPink text-xs mb-4">
         FINAL LEVEL
       </p>
