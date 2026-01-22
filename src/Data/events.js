@@ -104,4 +104,14 @@ export const events = [
     history:
       "One of the largest career events in Egypt, connecting students with top companies, mentors, and industry leaders.",
   },
+  {
+  id: 9,
+  title: "Ramadan Cup",
+  type: "tournament",
+  status: "upcoming",
+  date: "2026-02-27",
+  image:"/Events/Ramadan.png",
+  link: "/tournament2"
+}
+
 ]

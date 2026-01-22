@@ -76,7 +76,6 @@ function Home() {
       <Projects />
       <Team />
       <Levels />
-      {/* 🎮 Arcade Credits */}
       <Footer />
     </>
   )

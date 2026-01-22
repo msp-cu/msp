@@ -2,10 +2,13 @@ import { Routes, Route } from "react-router-dom"
 import { useEffect } from "react"
 import Home from "./Pages/Home"
 import Join from "./Pages/Join"
+import Tournament from "./Pages/Tournament"
+import TournamentRegister from "./Pages/TournamentRegister"
 import {
   stopBackgroundMusic,
   startBackgroundMusic,
 } from "./utils/sound"
+import Tournament2 from "./Pages/Tournament2"
 
 function App() {
 
@@ -30,6 +33,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/join" element={<Join />} />
+      <Route path="/tournament" element={<Tournament />} />
+      <Route path="/tournament/register" element={<TournamentRegister />} />
+      <Route path="/tournament2" element={<Tournament2 />} />
+
     </Routes>
   )
 }

@@ -6,6 +6,7 @@ function EventModal({ event, onClose }) {
   if (!event) return null
 
   const hasBooking = Boolean(event.bookingLink)
+  const haslink = Boolean(event.link)
 
   return (
     <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
@@ -32,9 +33,12 @@ function EventModal({ event, onClose }) {
         {/* UPCOMING COUNTDOWN */}
         {event.status === "upcoming" && (
           <div className="mt-4">
-            <Countdown date={event.date} />
+            <Countdown date={event.date}
+             />
           </div>
         )}
+
+        
 
         {/* STATS */}
         {event.stats && (
@@ -59,6 +63,24 @@ function EventModal({ event, onClose }) {
           <a
             href={event.bookingLink}
             target="_blank"
+            rel="noopener noreferrer"
+            className="
+              block mt-6 text-center
+              border-2 border-neonPink py-3
+              font-pixel text-xs text-neonPink
+              hover:bg-neonPink hover:text-black
+              shadow-[0_0_20px_#ff2fd2]
+            "
+          >
+            JOIN EVENT
+          </a>
+        )}
+
+        {/* JOIN BUTTON (ALWAYS VISIBLE IF EXISTS) */}
+        {haslink &&  (
+          <a
+            href={event.link}
+            target="_self"
             rel="noopener noreferrer"
             className="
               block mt-6 text-center

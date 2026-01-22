@@ -311,7 +311,7 @@ export const teamCards = [
     role: "QC Moderator",
     category: "non-tech",
     image: "/Board/Eyad.jpg",
-    xp: 65,
+    xp: 80,
     rarity: "uncommon",
     description: "Maintains quality standards and rules enforcement."
   },
