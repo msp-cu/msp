@@ -24,7 +24,7 @@ export const paths = [
     rarity: "rare",
 description:
   "Behind every great product is a strong strategy. Communicate, manage, build, and lead the game from the inside.",    
-  committees: ["PR","Entrepreneurship","Project Management","Finance"],
+  committees: ["PR","Entrepreneurship","Project Management","Finance", "Video Editing" ],
   },
 
   // 🔒 CLOSED
@@ -44,6 +44,6 @@ description:
     open: false,
     rarity: "locked",
     description: "Applications closed.",
-    committees: ["Graphic Design", "Video Editing" , " Marketing"],
+    committees: ["Graphic Design", " Marketing"],
   },
 ]
