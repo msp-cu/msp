@@ -179,10 +179,10 @@ function Join() {
           {form.track === "Non-Tech" && (
             <>
               <Select name="pref1" icon={<Layers />} label="First Non-Tech Preference"
-                options={["PR","Entrepreneurship","Project Management","Finance"]}
+                options={["PR","Entrepreneurship","Project Management","Finance", "Video Editing" ]}
                 onChange={handleChange} error={errors.pref1} />
               <Select name="pref2" icon={<Layers />} label="Second Non-Tech Preference"
-                options={["PR","Entrepreneurship","Project Management","Finance"]}
+                options={["PR","Entrepreneurship","Project Management","Finance", "Video Editing" ]}
                 onChange={handleChange} error={errors.pref2} />
             </>
           )}
