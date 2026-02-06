@@ -30,16 +30,6 @@ export const teamCards = [
     description: "Master of external campaigns. Leads the guild beyond its borders and secures new alliances."
   },
   {
-    id: 4,
-    name: "Ahmed Yasser",
-    role: "OC Director",
-    category: "high",
-    image: "/Board/Helmy.jpeg",
-    xp: 80,
-    rarity: "epic",
-    description: "Strategic field leader focused on expansion, outreach, and large-scale operations."
-  },
-  {
     id: 5,
     name: "Hoda Mohamed",
     role: "Creative Director",
