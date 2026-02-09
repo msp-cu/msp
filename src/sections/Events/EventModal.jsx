@@ -7,6 +7,7 @@ function EventModal({ event, onClose }) {
 
   const hasBooking = Boolean(event.bookingLink)
   const haslink = Boolean(event.link)
+  const hasactivities = Boolean(event.activitiesLink)
 
   return (
     <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
@@ -93,6 +94,26 @@ function EventModal({ event, onClose }) {
             JOIN EVENT
           </a>
         )}
+
+        {/* JOIN BUTTON (ALWAYS VISIBLE IF EXISTS) */}
+
+        {hasactivities &&  (
+          <a
+            href={event.activitiesLink}
+            target="_self"
+            rel="noopener noreferrer"
+            className="
+              block mt-6 text-center
+              border-2 border-neonPink py-3
+              font-pixel text-xs text-neonPink
+              hover:bg-neonPink hover:text-black
+              shadow-[0_0_20px_#ff2fd2]
+            "
+          >
+            🎮 ENTER GAME ZONE
+          </a>
+        )}
+
 
         {/* PLANNED NOTE */}
         {event.status === "planned" && !hasBooking && (
