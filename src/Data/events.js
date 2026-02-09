@@ -89,7 +89,8 @@ export const events = [
     status: "upcoming",
     date: "2026-02-13",
     image: "/Events/YouthScope.jpg",
-    bookingLink: "https://www.merchant.geidea.net/payByLink/static-paylink/YOUTHSCOPE/o2g-h3g-lll-j59",
+    bookingLink: "https://shorturl.at/Ud0vX",
+    activitiesLink: "/activities",
     history:
       "The first hub to raise the efficiency of student activities, increase their effectiveness, and  provide different opportunities for students and fresh graduates.",
   },
