@@ -12,7 +12,7 @@ import ReactionGame from "./sections/activities/games/ReactionGame"
 import TypingGame from "./sections/activities/games/TypingGame"
 import MovieGuessGame from "./sections/activities/games/MovieGuessGame"
 import MSPQuizGame from "./sections/activities/games/MSPQuizGame"
-
+import PuzzleGame from "./sections/activities/games/PuzzleGame"
 
 function App() {
 
@@ -46,7 +46,7 @@ function App() {
       <Route path="/activities/games/TypingGame" element={<TypingGame />} />
       <Route path="/activities/games/MovieGuessGame" element={<MovieGuessGame />} />
       <Route path="/activities/games/MSPQuizGame" element={<MSPQuizGame />} />
-
+      <Route path="/activities/games/PuzzleGame" element={<PuzzleGame />} />
     </Routes>
   )
 }
