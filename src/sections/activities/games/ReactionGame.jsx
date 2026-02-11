@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import BackToGamesButton from "../game-zone/BackToGamesButton"
 
 export default function ReactionGame() {
   const [state, setState] = useState("idle")
@@ -49,6 +50,7 @@ export default function ReactionGame() {
       onClick={handleClick}
       className={`min-h-screen ${bg} flex items-center justify-center text-center transition-colors duration-200`}
     >
+      <BackToGamesButton/>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

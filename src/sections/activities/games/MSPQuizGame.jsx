@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import BackToGamesButton from "../game-zone/BackToGamesButton"
 
 const QUESTIONS = [
   {
@@ -74,6 +75,7 @@ export default function MSPQuizGame() {
 
   return (
     <section className="min-h-screen bg-black flex items-center justify-center p-6">
+      <BackToGamesButton/>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

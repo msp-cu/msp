@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import BackToGamesButton from "../game-zone/BackToGamesButton"
 
 const SENTENCES = [
   "msp builds future leaders",
@@ -61,6 +62,7 @@ export default function NeonTypingSentences() {
   return (
     <div className="min-h-screen bg-black flex items-center justify-center text-white">
       <div className="text-center max-w-xl px-4">
+        <BackToGamesButton/>
         <h1 className="font-pixel text-neonPink text-xl mb-6">
           NEON TYPING CHALLENGE
         </h1>

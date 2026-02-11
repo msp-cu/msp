@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
     { id: "typing", name: "Typing Game", path: "./games/TypingGame" },
     { id: "movies", name: "Movies Guess Game", path: "./games/MovieGuessGame" },
     { id: "quiz", name: "MSP Quiz Game", path: "./games/MSPQuizGame" },
+    { id: "puzzle", name: "Puzzle Game", path: "./games/PuzzleGame" },
   ]
     return (
     <section className="min-h-screen bg-black text-center py-24">
