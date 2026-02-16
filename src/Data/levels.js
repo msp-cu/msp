@@ -11,8 +11,8 @@ export const paths = [
       "Back-End",
       "Flutter",
       "AI",
-      // "Cyber Security"
-      "UI-UX",
+      "Cyber Security",
+      
     ],
   },
 

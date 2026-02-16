@@ -102,16 +102,16 @@ export const teamCards = [
     rarity: "epic",
     description: "Designs smooth user journeys and optimizes player experience."
   },
-  {
-    id: 12,
-    name: "Israa Moustafa",
-    role: "UI-UX Instructor",
-    category: "tech",
-    image: "/Board/israa.jpeg",
-    xp: 80,
-    rarity: "rare",
-    description: "Balances aesthetics with usability for maximum impact."
-  },
+  // {
+  //   id: 12,
+  //   name: "Israa Moustafa",
+  //   role: "UI-UX Instructor",
+  //   category: "tech",
+  //   image: "/Board/israa.jpeg",
+  //   xp: 80,
+  //   rarity: "rare",
+  //   description: "Balances aesthetics with usability for maximum impact."
+  // },
   {
     id: 13,
     name: "Youssef Said",
@@ -132,16 +132,16 @@ export const teamCards = [
     rarity: "epic",
     description: "Trains intelligent systems and unlocks machine-learning abilities."
   },
-  {
-    id: 15,
-    name: "Samuil Hosney",
-    role: "Flutter Instructor",
-    category: "tech",
-    image: "/Board/Samual.jpg",
-    xp: 80,
-    rarity: "rare",
-    description: "Builds cross-platform apps with speed and precision."
-  },
+  // {
+  //   id: 15,
+  //   name: "Samuil Hosney",
+  //   role: "Flutter Instructor",
+  //   category: "tech",
+  //   image: "/Board/Samual.jpg",
+  //   xp: 80,
+  //   rarity: "rare",
+  //   description: "Builds cross-platform apps with speed and precision."
+  // },
   {
     id: 16,
     name: "Omar El Barody",
@@ -215,16 +215,16 @@ export const teamCards = [
     rarity: "rare",
     description: "Unlocks partnerships and growth opportunities."
   },
-  {
-    id: 23,
-    name: "Kerolos",
-    role: "BD Head",
-    category: "non-tech",
-    image: "/Board/kiro.jpeg",
-    xp: 75,
-    rarity: "rare",
-    description: "Negotiates deals and expands the guild’s influence."
-  },
+  // {
+  //   id: 23,
+  //   name: "Kerolos",
+  //   role: "BD Head",
+  //   category: "non-tech",
+  //   image: "/Board/kiro.jpeg",
+  //   xp: 75,
+  //   rarity: "rare",
+  //   description: "Negotiates deals and expands the guild’s influence."
+  // },
   {
     id: 24,
     name: "Ahmed Wael",
@@ -300,8 +300,8 @@ export const teamCards = [
     name: "Eyad Ashraf",
     role: "QC Moderator",
     category: "non-tech",
-    image: "/Board/Eyad.jpg",
-    xp: 80,
+    image: "/Board/Eyad Ashraf.jpeg",
+    xp: 90,
     rarity: "uncommon",
     description: "Maintains quality standards and rules enforcement."
   },

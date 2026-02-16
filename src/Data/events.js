@@ -110,7 +110,7 @@ export const events = [
   title: "Ramadan Cup",
   type: "tournament",
   status: "upcoming",
-  date: "2026-02-27",
+  date: "2026-03-02",
   image:"/Events/Ramadan.png",
   link: "/tournament"
 }
