@@ -13,6 +13,7 @@ import SemiFinals from "../sections/Tournament/SemiFinals"
 import Final from "../sections/Tournament/Final"
 import ThirdPlace from "../sections/Tournament/ThirdPlace"
 import Winners from "../sections/Tournament/Winners"
+import SponsorsSection from "../sections/Tournament/SponsorsSection"
 // import Bracket  from "../sections/Tournament/Bracket"
 // import TeamsTest from "../sections/Tournament/TeamsTest"
 // import Groups from "../sections/Tournament/Groups"
@@ -44,6 +45,7 @@ useEffect(() => {
       <TournamentHero />
       <TournamentInfo />
       <TournamentRules />
+      <SponsorsSection />
       {/* <TeamsTest /> */}
       <Standings onLoaded={setStandingsData} />
       {/* <QuarterFinals matches={quarterFinals} /> */}
