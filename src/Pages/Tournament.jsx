@@ -14,6 +14,7 @@ import Final from "../sections/Tournament/Final"
 import ThirdPlace from "../sections/Tournament/ThirdPlace"
 import Winners from "../sections/Tournament/Winners"
 import SponsorsSection from "../sections/Tournament/SponsorsSection"
+import TopScorers from "../sections/Tournament/TopScorers"
 // import Bracket  from "../sections/Tournament/Bracket"
 // import TeamsTest from "../sections/Tournament/TeamsTest"
 // import Groups from "../sections/Tournament/Groups"
@@ -29,15 +30,15 @@ useEffect(() => {
   fetch(KNOCKOUT_MATCHES_API)
     .then(res => res.json())
     .then(data => {
-      console.log("🔥 KNOCKOUT MATCHES", data)
+      // console.log("🔥 KNOCKOUT MATCHES", data)
       setKnockoutMatches(data)
     })
 }, [])
 
 
-  console.log("✅ QUALIFIED TEAMS", qualifiedTeams)
+  // console.log("✅ QUALIFIED TEAMS", qualifiedTeams)
   const quarterFinals = buildQuarterFinals(qualifiedTeams)
-  console.log("🏆 QUARTER FINALS", quarterFinals)
+  // console.log("🏆 QUARTER FINALS", quarterFinals)
 
   return (
     <div className="min-h-screen bg-black pt-24">
@@ -46,6 +47,7 @@ useEffect(() => {
       <TournamentInfo />
       <TournamentRules />
       <SponsorsSection />
+      <TopScorers />
       {/* <TeamsTest /> */}
       <Standings onLoaded={setStandingsData} />
       {/* <QuarterFinals matches={quarterFinals} /> */}
