@@ -1,5 +1,5 @@
 import {useEffect, useState } from "react"
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar3"
 import Footer from "../components/Footer"
 import TournamentHero from "../sections/Tournament/TournamentHero"
 import TournamentInfo from "../sections/Tournament/TournamentInfo"
@@ -14,7 +14,6 @@ import Final from "../sections/Tournament/Final"
 import ThirdPlace from "../sections/Tournament/ThirdPlace"
 import Winners from "../sections/Tournament/Winners"
 import SponsorsSection from "../sections/Tournament/SponsorsSection"
-import TopScorers from "../sections/Tournament/TopScorers"
 // import Bracket  from "../sections/Tournament/Bracket"
 // import TeamsTest from "../sections/Tournament/TeamsTest"
 // import Groups from "../sections/Tournament/Groups"
@@ -46,9 +45,7 @@ useEffect(() => {
       <TournamentHero />
       <TournamentInfo />
       <TournamentRules />
-      <SponsorsSection />
-      <TopScorers />
-      {/* <TeamsTest /> */}
+      <SponsorsSection />      {/* <TeamsTest /> */}
       <Standings onLoaded={setStandingsData} />
       {/* <QuarterFinals matches={quarterFinals} /> */}
       <QuarterFinals matches={knockoutMatches} />
