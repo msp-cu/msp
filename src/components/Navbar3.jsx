@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Volume2, VolumeX, Menu, X } from "lucide-react"
-import { toggleMute } from "../utils/sound"
+import {Menu, X } from "lucide-react"
 import { useLocation, useNavigate } from "react-router-dom"
 
 
@@ -25,7 +24,7 @@ const goToSection = (id) => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0B132B]/80 backdrop-blur border-b border-neonYellow">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-neonPink">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
           {/* Logo */}
@@ -36,9 +35,9 @@ const goToSection = (id) => {
             <img
               src="/logo.png"
               alt="MSP Logo"
-              className="w-10 h-10 object-contain drop-shadow-[0_0_6px_bg-[#0B132B]]"
+              className="w-10 h-10 object-contain drop-shadow-[0_0_6px_#ff2fd2]"
             />
-            <span className="font-pixel text-neonYellow text-sm">
+            <span className="font-pixel text-neonPink text-sm">
               MSP CU
             </span>
           </Link>
@@ -48,11 +47,10 @@ const goToSection = (id) => {
             <li><button onClick={() => navigate("/tournament")} className="hover:text-neonPink">Tournament</button></li>
             <li><button onClick={() => navigate("/topplayers")} className="hover:text-neonPink">Top Scorers</button></li>
             <li><button onClick={() => navigate("/matches")} className="hover:text-neonPink">Matches Center</button></li>
-
-            {/* Join */}
+        {/* Join */}
             <Link
               to="/tournamentegistration"
-              className="border border-neonYellow px-4 py-2 hover:bg-neonYellow hover:text-black transition"
+              className="border border-neonPink px-4 py-2 hover:bg-neonPink hover:text-black transition"
             >
               Team Registration
             </Link>
@@ -114,7 +112,6 @@ const goToSection = (id) => {
 >
   Team Registration
 </button>
-
         </div>
       )}
     </>
