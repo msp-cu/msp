@@ -14,7 +14,7 @@ import MovieGuessGame from "./sections/activities/games/MovieGuessGame"
 import MSPQuizGame from "./sections/activities/games/MSPQuizGame"
 import PuzzleGame from "./sections/activities/games/PuzzleGame"
 import TopPlayers from "./Pages/TopPlayers"
-import Matches_Center from "./Pages/Matches"
+// import Matches_Center from "./Pages/Matches"
 
 function App() {
 
@@ -50,7 +50,7 @@ function App() {
       <Route path="/activities/games/MSPQuizGame" element={<MSPQuizGame />} />
       <Route path="/activities/games/PuzzleGame" element={<PuzzleGame />} />
       <Route path="/topplayers" element={<TopPlayers />} />
-      <Route path="/matches" element={<Matches_Center />} />
+      {/* <Route path="/matches" element={<Matches_Center />} /> */}
       <Route path="/tournamentegistration" element={<TournamentRegister />} />
     </Routes>
   )

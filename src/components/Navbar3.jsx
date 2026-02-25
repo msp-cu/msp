@@ -46,7 +46,7 @@ const goToSection = (id) => {
           <ul className="hidden md:flex items-center gap-8 font-pixel text-xs text-white/70">
             <li><button onClick={() => navigate("/tournament")} className="hover:text-neonPink">Tournament</button></li>
             <li><button onClick={() => navigate("/topplayers")} className="hover:text-neonPink">Top Scorers</button></li>
-            <li><button onClick={() => navigate("/matches")} className="hover:text-neonPink">Matches Center</button></li>
+            {/* <li><button onClick={() => navigate("/matches")} className="hover:text-neonPink">Matches Center</button></li> */}
         {/* Join */}
             <Link
               to="/tournamentegistration"
@@ -96,14 +96,14 @@ const goToSection = (id) => {
   Top Scorers
 </button>
 
-<button
+{/* <button
   onClick={() => {
     setOpen(false)
     navigate("/matches")
   }}
 >
   Matches Center
-</button>
+</button> */}
 <button
   onClick={() => {
     setOpen(false)

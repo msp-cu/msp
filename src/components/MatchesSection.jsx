@@ -1,4 +1,3 @@
-import { u } from "framer-motion/client"
 import { useEffect, useState } from "react"
 
 
