@@ -15,7 +15,6 @@ import MSPQuizGame from "./sections/activities/games/MSPQuizGame"
 import PuzzleGame from "./sections/activities/games/PuzzleGame"
 import TopPlayers from "./Pages/TopPlayers"
 import Matches_Center from "./Pages/Matches"
-import TeamForm from "./sections/Tournament2/TeamForm"
 
 function App() {
 
