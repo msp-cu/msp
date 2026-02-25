@@ -39,16 +39,16 @@ export const teamCards = [
     rarity: "epic",
     description: "The visual architect of the guild. Turns ideas into powerful visuals and brand identity."
   },
-  {
-    id: 6,
-    name: "Haneen Moustafa",
-    role: "OC Director",
-    category: "high",
-    image: "/Board/Haneen.jpg",
-    xp: 95,
-    rarity: "epic",
-    description: "Elite tactician handling high-risk missions and large-scale coordination."
-  },
+  // {
+  //   id: 6,
+  //   name: "Haneen Moustafa",
+  //   role: "OC Director",
+  //   category: "high",
+  //   image: "/Board/Haneen.jpg",
+  //   xp: 95,
+  //   rarity: "epic",
+  //   description: "Elite tactician handling high-risk missions and large-scale coordination."
+  // },
   {
     id: 7,
     name: "Menna Shehata",

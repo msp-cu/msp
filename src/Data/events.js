@@ -86,11 +86,15 @@ export const events = [
   {
     id: 7,
     title: "Youth Activities Hub'2",
-    status: "upcoming",
+    status: "Completed",
     date: "2026-02-13",
     image: "/Events/YouthScope.jpg",
-    bookingLink: "https://shorturl.at/Ud0vX",
-    activitiesLink: "/activities",
+    // bookingLink: "https://shorturl.at/Ud0vX",
+    // activitiesLink: "/activities",
+    stats: {
+      attendees: 3000,
+      speakers: 20
+    },
     history:
       "The first hub to raise the efficiency of student activities, increase their effectiveness, and  provide different opportunities for students and fresh graduates.",
   },
@@ -107,11 +111,11 @@ export const events = [
   },
   {
   id: 9,
-  title: "Ramadan Cup",
+  title: "MSPCU Cup",
   type: "tournament",
   status: "upcoming",
-  date: "2026-03-02",
-  image:"/Events/Ramadan.png",
+  date: "2026-04-20",
+  image:"/Events/Football.png",
   link: "/tournament"
 }
 
