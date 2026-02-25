@@ -13,6 +13,9 @@ import TypingGame from "./sections/activities/games/TypingGame"
 import MovieGuessGame from "./sections/activities/games/MovieGuessGame"
 import MSPQuizGame from "./sections/activities/games/MSPQuizGame"
 import PuzzleGame from "./sections/activities/games/PuzzleGame"
+import TopPlayers from "./Pages/TopPlayers"
+import Matches_Center from "./Pages/Matches"
+import TeamForm from "./sections/Tournament2/TeamForm"
 
 function App() {
 
@@ -47,6 +50,9 @@ function App() {
       <Route path="/activities/games/MovieGuessGame" element={<MovieGuessGame />} />
       <Route path="/activities/games/MSPQuizGame" element={<MSPQuizGame />} />
       <Route path="/activities/games/PuzzleGame" element={<PuzzleGame />} />
+      <Route path="/topplayers" element={<TopPlayers />} />
+      <Route path="/matches" element={<Matches_Center />} />
+      <Route path="/tournamentegistration" element={<TournamentRegister />} />
     </Routes>
   )
 }
