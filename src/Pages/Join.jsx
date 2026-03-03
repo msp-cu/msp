@@ -168,10 +168,10 @@ function Join() {
           {form.track === "Tech" && (
             <>
               <Select name="pref1" icon={<Layers />} label="First Tech Preference"
-                options={["Front-End","Back-End","Flutter","AI","Cyber Security"]}
+                options={["Front-End","Back-End","Flutter"]}
                 onChange={handleChange} error={errors.pref1} />
               <Select name="pref2" icon={<Layers />} label="Second Tech Preference"
-                options={["Front-End","Back-End","Flutter","AI","Cyber Security"]}
+                options={["Front-End","Back-End","Flutter"]}
                 onChange={handleChange} error={errors.pref2} />
             </>
           )}
@@ -179,10 +179,10 @@ function Join() {
           {form.track === "Non-Tech" && (
             <>
               <Select name="pref1" icon={<Layers />} label="First Non-Tech Preference"
-                options={["PR","Entrepreneurship","Project Management","Finance", "Video Editing" ]}
+                options={["PR","Entrepreneurship","Project Management","Finance" ]}
                 onChange={handleChange} error={errors.pref1} />
               <Select name="pref2" icon={<Layers />} label="Second Non-Tech Preference"
-                options={["PR","Entrepreneurship","Project Management","Finance", "Video Editing" ]}
+                options={["PR","Entrepreneurship","Project Management","Finance" ]}
                 onChange={handleChange} error={errors.pref2} />
             </>
           )}
