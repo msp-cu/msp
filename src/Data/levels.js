@@ -9,6 +9,7 @@ export const paths = [
     committees: [
       "Front-End",
       "Back-End",
+      "UI/UX",
       "Flutter",
       "AI",
       "Cyber Security",
