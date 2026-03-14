@@ -36,4 +36,11 @@ export const collaborations = [
     logo: "/collabs/Entreprenelle .webp",
     role: "Community Partner",
   },
+  {
+    id: 7,
+    name: "Carerha",
+    logo: "/collabs/Carerha-logo.png",
+    role: "Community Partner",
+  },
 ]
+

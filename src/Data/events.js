@@ -57,7 +57,7 @@ export const events = [
 
   {
     id: 5,
-    title: "She Can Tech&Ai Edition '25",
+    title: "She Can Tech&Ai Edition'25",
     status: "completed",
     date: "2025-12-06",
     image: "/Events/SheCan.jpg",
@@ -98,9 +98,18 @@ export const events = [
     history:
       "The first hub to raise the efficiency of student activities, increase their effectiveness, and  provide different opportunities for students and fresh graduates.",
   },
-
+{
+  id: 8,
+    title: "IMPACT HER'26",
+    status: "upcoming",
+    date: "2026-03-28",
+    image: "/Events/logo 2.png",
+    bookingLink: "https://forms.gle/rvp2Qsf6xsB5juxM9",
+    history:
+      "Inspiring event empowering women to take ownership of their growth, leadership, and work-life balance. The event provides practical tools and strategies to support skill development, celebrates women’s impact, and creates opportunities for connection, knowledge sharing, and mentorship within a supportive community",
+  },
   {
-    id: 8,
+    id: 9,
     title: "Egypt Career Summit – 9th Edition",
     status: "upcoming",
     date: "2026-04-03",
@@ -109,8 +118,9 @@ export const events = [
     history:
       "One of the largest career events in Egypt, connecting students with top companies, mentors, and industry leaders.",
   },
+
   {
-  id: 9,
+  id: 10,
   title: "MSPCU Cup",
   type: "tournament",
   status: "upcoming",
@@ -118,5 +128,4 @@ export const events = [
   image:"/Events/Football.png",
   link: "/tournament"
 }
-
 ]
