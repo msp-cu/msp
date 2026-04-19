@@ -355,14 +355,14 @@ export const teamCards = [
     rarity: "rare",
     description: "Manages timelines, tasks, and mission success."
   },
-  {
-    id: 37,
-    name: "Abdullah Khaled",
-    role: "Project Management Instructor",
-    category: "non-tech",
-    image: "/Board/Abdullah.jpeg",
-    xp: 85,
-    rarity: "rare",
-    description: "Ensures projects are delivered on time and on target."
-  }
+  // {
+  //   id: 37,
+  //   name: "Abdullah Khaled",
+  //   role: "Project Management Instructor",
+  //   category: "non-tech",
+  //   image: "/Board/Abdullah.jpeg",
+  //   xp: 85,
+  //   rarity: "rare",
+  //   description: "Ensures projects are delivered on time and on target."
+  // }
 ]

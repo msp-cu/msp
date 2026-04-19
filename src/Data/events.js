@@ -101,30 +101,65 @@ export const events = [
 {
   id: 8,
     title: "IMPACT HER'26",
-    status: "upcoming",
+    status: "completed",
     date: "2026-03-28",
     image: "/Events/logo 2.png",
-    bookingLink: "https://forms.gle/rvp2Qsf6xsB5juxM9",
+    // bookingLink: "https://forms.gle/rvp2Qsf6xsB5juxM9",
+    stats: {
+      attendees: 1000,
+      speakers: 30
+    },
     history:
       "Inspiring event empowering women to take ownership of their growth, leadership, and work-life balance. The event provides practical tools and strategies to support skill development, celebrates women’s impact, and creates opportunities for connection, knowledge sharing, and mentorship within a supportive community",
   },
   {
     id: 9,
     title: "Egypt Career Summit – 9th Edition",
-    status: "upcoming",
+    status: "completed",
     date: "2026-04-03",
     image: "/Events/ECS.jpg",
-    bookingLink: "https://career-180.com/en/events/egypt-career-summit9th/register",
+    // bookingLink: "https://career-180.com/en/events/egypt-career-summit9th/register",
+    stats: {
+      attendees: 6000,
+      speakers: 100
+    },
     history:
       "One of the largest career events in Egypt, connecting students with top companies, mentors, and industry leaders.",
   },
 
+{
+    id: 10,
+    title: "SHE CAN | IF SHE CAN'T WHO CAN'26",
+    status: "completed",
+    date: "2026-04-17",
+    image: "/Events/SHECAN'26.png",
+    stats: {
+      attendees: 3500,
+      speakers: 50
+    },
+  //   history:
+  //     "One of the largest career events in Egypt, connecting students with top companies, mentors, and industry leaders.",
+  },
   {
-  id: 10,
+  id: 11,
+  title: "Content Creation Workshop",
+    status: "upcoming",
+    date: "2026-04-24",
+    image: "/Events/Content Workshop.png",
+    bookingLink: "https://docs.google.com/forms/d/e/1FAIpQLSfV_qSF7lAy9gPwXGDTANL358ZfPtz32nfWEYL8HvGXkI22yA/viewform"
+    // stats: {
+    //   attendees: 3500,
+    //   speakers: 50
+    // },
+  //   history:
+  //     "One of the largest career events in Egypt, connecting students with top companies, mentors, and industry leaders.",
+  },
+  {
+  id: 12,
   title: "MSPCU Cup",
   type: "tournament",
   status: "upcoming",
-  date: "2026-04-20",
+  date: "2026-04-28",
   image:"/Events/Football.png",
   link: "/tournament"
 }
