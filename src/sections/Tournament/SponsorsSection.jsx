@@ -1,43 +1,48 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 function SponsorsSection() {
   const partners = [
+    // {
+    //   name: "Minders",
+    //   logo: "/partners/student activities/Minders.jpg",
+    // },
     {
-      name: "Minders",
-      logo: "/partners/student activities/Minders.jpg",
+      name: "",
+      logo: "",
     },
     {
-      name: "SBS",
-      logo: "/partners/student activities/SBS.jpg",
+      name: "",
+      logo: "",
     },
     {
-      name: "Enactus - Benha National University",
-      logo: "/partners/student activities/BNU.jpg",
+      name: "",
+      logo: "",
     },
+
     {
-      name: "ThreeDos",
-      logo: "/partners/student activities/ThreeDos.jpg",
+      name: "",
+      logo: "",
     },
-  ]
+  ];
 
   const sponsors = [
     {
-      name: "Sponsor 1",
-      logo: "/logos/sponsor1.png",
+      name: "",
+      logo: "",
     },
     {
-      name: "Sponsor 2",
-      logo: "/logos/sponsor2.png",
+      name: "",
+      logo: "",
     },
     {
-      name: "Sponsor 3",
-      logo: "/logos/sponsor3.png",
+      name: "",
+      logo: "",
     },
     {
-      name: "Sponsor 4",
-      logo: "/logos/sponsor4.png",
+      name: "",
+      logo: "",
     },
-  ]
+  ];
 
   const renderGrid = (items) => (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
@@ -66,11 +71,10 @@ function SponsorsSection() {
         </motion.div>
       ))}
     </div>
-  )
+  );
 
   return (
     <section className="max-w-6xl mx-auto py-28 px-6 text-center">
-      
       {/* PARTNERS */}
       <h2 className="font-pixel text-neonPink text-2xl tracking-widest animate-pulse">
         OFFICIAL PARTNERS
@@ -82,9 +86,8 @@ function SponsorsSection() {
         TOURNAMENT SPONSORS
       </h2>
       {renderGrid(sponsors)}
-
     </section>
-  )
+  );
 }
 
-export default SponsorsSection
+export default SponsorsSection;

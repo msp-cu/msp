@@ -1,9 +1,8 @@
-import { useState } from "react"
-import { jsPDF } from "jspdf"
-
+import { useState } from "react";
+import { jsPDF } from "jspdf";
 
 function TournamentRules() {
-  const [openSection, setOpenSection] = useState(null)
+  const [openSection, setOpenSection] = useState(null);
 
   const sections = [
     {
@@ -14,7 +13,6 @@ function TournamentRules() {
         "Each team must have a designated captain responsible for communication with referees and organizers.",
         "Only registered players listed in the team sheet are allowed to play.",
         "All players must belong to the same Student Activity.",
-
       ],
     },
     {
@@ -38,69 +36,68 @@ function TournamentRules() {
         "After 15 minutes delay, the match is awarded 3-0 to the opponent.",
       ],
     },
-   {
-  title: "DISCIPLINE RULES",
-  rules: [
-    "🟨 Yellow Card = 2 minutes temporary suspension.",
-    "🟥 Red Card = Sent off.",
-    "Offensive language or misconduct leads to immediate action or disqualification.",
-    "Only turf shoes are allowed (No metal studs).",
-  ],
-}
-,
-{
-  title: "Entry Fees & Prizes",
-  rules: [
-    "Entry Fee: 100 EGP per player, payable before the tournament starts.",
-    // "Prizes: 1st Place: Trophy + 2000 EGP, 2nd Place: Medal + 1000 EGP, 3rd Place: Medal + 500 EGP.",
-    "All teams receive a participation certificate and exclusive MSP merchandise.",
-  ],
-}
-  ]
-  
+    {
+      title: "DISCIPLINE RULES",
+      rules: [
+        "🟨 Yellow Card = 2 minutes temporary suspension.",
+        "🟥 Red Card = Sent off.",
+        "Offensive language or misconduct leads to immediate action or disqualification.",
+        "Only turf shoes are allowed (No metal studs).",
+      ],
+    },
+    {
+      title: "Entry Fees & Prizes",
+      rules: [
+        "Entry Fee: 125 EGP per player, payable before the tournament starts.",
+        // "Prizes: 1st Place: Trophy + 2000 EGP, 2nd Place: Medal + 1000 EGP, 3rd Place: Medal + 500 EGP.",
+        "All teams receive a participation certificate and exclusive MSP merchandise.",
+      ],
+    },
+  ];
+
   const downloadPDF = () => {
-  const doc = new jsPDF()
+    const doc = new jsPDF();
 
-  let y = 20
+    let y = 20;
 
-  doc.setFont("helvetica", "bold")
-  doc.setFontSize(18)
-  doc.text("MSP Football Tournament Rules", 105, y, { align: "center" })
-  y += 15
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text("MSP Football Tournament Rules", 105, y, { align: "center" });
+    y += 15;
 
-  doc.setFontSize(12)
+    doc.setFontSize(12);
 
-  sections.forEach((section) => {
-    doc.setFont("helvetica", "bold")
-    doc.text(section.title, 20, y)
-    y += 8
+    sections.forEach((section) => {
+      doc.setFont("helvetica", "bold");
+      doc.text(section.title, 20, y);
+      y += 8;
 
-    doc.setFont("helvetica", "normal")
+      doc.setFont("helvetica", "normal");
 
-    section.rules.forEach((rule) => {
-      const splitText = doc.splitTextToSize(`• ${rule}`, 170)
-      doc.text(splitText, 25, y)
-      y += splitText.length * 7
+      section.rules.forEach((rule) => {
+        const splitText = doc.splitTextToSize(`• ${rule}`, 170);
+        doc.text(splitText, 25, y);
+        y += splitText.length * 7;
 
-      if (y > 270) {
-        doc.addPage()
-        y = 20
-      }
-    })
+        if (y > 270) {
+          doc.addPage();
+          y = 20;
+        }
+      });
 
-    y += 8
-  })
+      y += 8;
+    });
 
-  doc.setFontSize(10)
-  doc.setTextColor(150)
-  doc.text(
-    "By participating in the tournament, teams agree to all rules stated above.",
-    20,
-    y
-  )
-  doc.setTextColor(0)
-  doc.save("MSP-Tournament-Rules.pdf")
-}
+    doc.setFontSize(10);
+    doc.setTextColor(150);
+    doc.text(
+      "By participating in the tournament, teams agree to all rules stated above.",
+      20,
+      y,
+    );
+    doc.setTextColor(0);
+    doc.save("MSP-Tournament-Rules.pdf");
+  };
 
   return (
     <section className="max-w-4xl mx-auto py-24 px-4 text-center">
@@ -110,42 +107,42 @@ function TournamentRules() {
 
       <div className="space-y-6">
         {sections.map((section, index) => (
-  <div
-    key={index}
-    className="border border-neonPink shadow-[0_0_15px_#ff2fd2] rounded hover:shadow-[0_0_25px_#ff2fd2] transition duration-300"
-  >
-    <button
-      onClick={() =>
-        setOpenSection(openSection === index ? null : index)
-      }
-      className="w-full py-4 font-pixel text-neonBlue text-sm tracking-wider"
-    >
-      {section.title}
-    </button>
+          <div
+            key={index}
+            className="border border-neonPink shadow-[0_0_15px_#ff2fd2] rounded hover:shadow-[0_0_25px_#ff2fd2] transition duration-300"
+          >
+            <button
+              onClick={() =>
+                setOpenSection(openSection === index ? null : index)
+              }
+              className="w-full py-4 font-pixel text-neonBlue text-sm tracking-wider"
+            >
+              {section.title}
+            </button>
 
-    {/* Slide Down Container */}
-    <div
-      className={`
+            {/* Slide Down Container */}
+            <div
+              className={`
         overflow-hidden transition-all duration-500 ease-in-out
         ${openSection === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
       `}
-    >
-      <ul className="pb-6 space-y-3 text-xs md:text-sm text-white/80">
-        {section.rules.map((rule, i) => (
-          <li key={i} className="px-6">
-            ⚽ {rule}
-          </li>
+            >
+              <ul className="pb-6 space-y-3 text-xs md:text-sm text-white/80">
+                {section.rules.map((rule, i) => (
+                  <li key={i} className="px-6">
+                    ⚽ {rule}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         ))}
-      </ul>
-    </div>
-  </div>
-))}
-
       </div>
 
       {/* Legal Note */}
       <p className="mt-12 text-xs text-white/60 ">
-        ⚠ By participating in the tournament, teams agree to all rules stated above.
+        ⚠ By participating in the tournament, teams agree to all rules stated
+        above.
       </p>
 
       {/* Download Button */}
@@ -163,7 +160,7 @@ function TournamentRules() {
         DOWNLOAD RULES PDF
       </button>
     </section>
-  )
+  );
 }
 
-export default TournamentRules
+export default TournamentRules;
