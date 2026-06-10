@@ -92,16 +92,16 @@ export const teamCards = [
     rarity: "rare",
     description: "Specialist in building responsive and interactive user experiences."
   },
-  {
-    id: 11,
-    name: "Rawan Ahmed",
-    role: "UI-UX Instructor",
-    category: "tech",
-    image: "/Board/Rawan.jpeg",
-    xp: 85,
-    rarity: "epic",
-    description: "Designs smooth user journeys and optimizes player experience."
-  },
+  // {
+  //   id: 11,
+  //   name: "Rawan Ahmed",
+  //   role: "UI-UX Instructor",
+  //   category: "tech",
+  //   image: "/Board/Rawan.jpeg",
+  //   xp: 85,
+  //   rarity: "epic",
+  //   description: "Designs smooth user journeys and optimizes player experience."
+  // },
   // {
   //   id: 12,
   //   name: "Israa Moustafa",
