@@ -143,24 +143,39 @@ export const events = [
   {
   id: 11,
   title: "Content Creation Workshop",
-    status: "upcoming",
+    status: "completed",
     date: "2026-04-24",
     image: "/Events/Content Workshop.png",
-    bookingLink: "https://docs.google.com/forms/d/e/1FAIpQLSfV_qSF7lAy9gPwXGDTANL358ZfPtz32nfWEYL8HvGXkI22yA/viewform"
-    // stats: {
-    //   attendees: 3500,
-    //   speakers: 50
-    // },
-  //   history:
-  //     "One of the largest career events in Egypt, connecting students with top companies, mentors, and industry leaders.",
+    stats: {
+      attendees: 30,
+      speakers: 3
+    },
   },
   {
   id: 12,
   title: "MSPCU Cup",
   type: "tournament",
-  status: "upcoming",
+  status: "Postponed",
   date: "2026-04-28",
   image:"/Events/Football.png",
   link: "/tournament"
-}
+},
+
+{
+    id: 13,
+    title: "BootCamp'26",
+    status: "upcoming",
+    date: "2026-07-26",
+    image: "/Events/Bootcamppost.jpeg",
+    bookingLink: "https://forms.gle/mg1sjc5uDFW2GaaJ7",
+  },
+  {
+    id: 14,
+    title: "Conference",
+    status: "upcoming",
+    date: "2026-08-29",
+    image: "/Events/conference.png",
+    // bookingLink: "https://forms.gle/mg1sjc5uDFW2GaaJ7",
+  }
+  
 ]

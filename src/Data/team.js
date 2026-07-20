@@ -49,16 +49,16 @@ export const teamCards = [
   //   rarity: "epic",
   //   description: "Elite tactician handling high-risk missions and large-scale coordination."
   // },
-  {
-    id: 7,
-    name: "Menna Shehata",
-    role: "AC Director",
-    category: "high",
-    image: "/Board/Menna.jpg",
-    xp: 85,
-    rarity: "epic",
-    description: "Ensures internal stability and keeps every system running smoothly."
-  },
+  // {
+  //   id: 7,
+  //   name: "Menna Shehata",
+  //   role: "AC Director",
+  //   category: "high",
+  //   image: "/Board/Menna.jpg",
+  //   xp: 85,
+  //   rarity: "epic",
+  //   description: "Ensures internal stability and keeps every system running smoothly."
+  // },
   {
     id: 8,
     name: "Renada Tamer",
@@ -315,16 +315,16 @@ export const teamCards = [
     rarity: "uncommon",
     description: "Creates engaging content and digital stories."
   },
-  {
-    id: 33,
-    name: "Mai Shaaban",
-    role: "Entrepreneurship Instructor",
-    category: "non-tech",
-    image: "/Board/Mai.jpg",
-    xp: 80,
-    rarity: "rare",
-    description: "Teaches startup mindset and business tactics."
-  },
+  // {
+  //   id: 33,
+  //   name: "Mai Shaaban",
+  //   role: "Entrepreneurship Instructor",
+  //   category: "non-tech",
+  //   image: "/Board/Mai.jpg",
+  //   xp: 80,
+  //   rarity: "rare",
+  //   description: "Teaches startup mindset and business tactics."
+  // },
   {
     id: 34,
     name: "Jumana Medhat",
